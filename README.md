@@ -4,11 +4,11 @@ In this activity, it was requested an interactive dashboard to explore the [Bell
 
 ![dashboard](https://github.com/cami5326/belly-button-challenge/blob/main/StarterCode/pictures/dashboard.PNG)
 
-**1. The subject demographic information:**
+**1. The subject demographic information with a dropdown menu:**
 
 ![demo_info](https://github.com/cami5326/belly-button-challenge/blob/main/StarterCode/pictures/demo_info.PNG)
 
-**2. A horizontal bar chart with a dropdown menu to display the top 10 OTUs found in that subject:**
+**2. A horizontal bar chart to display the top 10 OTUs found in that subject:**
 
 ![bar_chart](https://github.com/cami5326/belly-button-challenge/blob/main/StarterCode/pictures/bar_chart.PNG)
 
