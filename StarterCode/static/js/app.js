@@ -1,13 +1,13 @@
 //function to populate the #sample-metadata on the html index
 //metadata is the demographic info on the page
-function populateDemographic(subject)
+function populateDemographic(cases)
 {
-//load the data on json file, pulling data.metadata into subjectDemoInfo
+//load the data on json file, pulling data.metadata into casesDemoInfo
     d3.json("samples.json").then((data) =>{
-        let subjectDemoInfo = data.metadata;
-//filter subjectDemoInfo based on the subjects
-        let response = subjectDemoInfo.filter(subjectList => subjectList.id == subject);
-//access the first subject data 
+        let casesDemoInfo = data.metadata;
+//filter casesDemoInfo based on the case
+        let response = casesDemoInfo.filter(casesList => casesList.id == cases);
+//access the first case data 
         let responseList = response[0];
 //clear the output
         d3.select("#sample-metadata").html("");
@@ -22,14 +22,14 @@ function populateDemographic(subject)
 }
 //functions to create the charts
 //start with function to create bar chart
-function createBar(subject)
+function createBar(cases)
 {
 //load the data on json file, pulling data.samples into barInfo
     d3.json("samples.json").then((data) =>{
         let barInfo = data.samples;
-//filter barInfo based on the subjects
-        let response = barInfo.filter(subjectList => subjectList.id == subject);
-//access the first subject data 
+//filter barInfo based on the case
+        let response = barInfo.filter(casesList => casesList.id == cases);
+//access the first cases data 
         let responseList = response[0];
 //create the bar chart with top 10 OTUs
 //create chart horizontally
@@ -55,13 +55,13 @@ function createBar(subject)
     })
 }
 //function to create bubble chart
-function createBubble (subject) {
+function createBubble (cases) {
 //load the data on json file, pulling data.samples into bubbleInfo
     d3.json("samples.json").then((data) =>{
         let bubbleInfo = data.samples;
-//filter bubbleInfo based on the subjects
-        let response = bubbleInfo.filter(subjectList => subjectList.id == subject);
-//access the first subject data 
+//filter bubbleInfo based on the case
+        let response = bubbleInfo.filter(casesList => casesList.id == cases);
+//access the first case data 
         let responseList = response[0];
 //create the bubble chart
         let bubleChart = {
@@ -99,26 +99,26 @@ function startDashboard()
 //load the data on json file, pulling data.names as the dropdown id
     d3.json("samples.json").then((data) =>{
         let dropdownIds= data.names;
-//append the subjects info to the ids on #selDataset html         
-        dropdownIds.forEach((subject) => {
+//append the cases info to the id on #selDataset html         
+        dropdownIds.forEach((cases) => {
             dropdown.append("option")
-            .text(subject)
-            .property("value", subject);
+            .text(cases)
+            .property("value", cases);
         });
-//access the first subject data 
-        let startSubject = dropdownIds[0];
+//access the first case data 
+        let startcases = dropdownIds[0];
 //call the functions to start the dashboard
-        populateDemographic(startSubject); 
-        createBar(startSubject);
-        createBubble(startSubject);
+        populateDemographic(startcases); 
+        createBar(startcases);
+        createBubble(startcases);
         });    
 }
 //function to update the dashboard
-function optionChanged(subject)
+function optionChanged(cases)
 {
-    populateDemographic(subject);
-    createBar(subject);
-    createBubble(subject);
+    populateDemographic(cases);
+    createBar(cases);
+    createBubble(cases);
 }
 //call the startDashboard function
 startDashboard();

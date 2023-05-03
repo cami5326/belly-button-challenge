@@ -4,6 +4,8 @@ In this activity, it was requested an interactive dashboard to explore the [Bell
 
 ![dashboard](https://github.com/cami5326/belly-button-challenge/blob/main/StarterCode/pictures/dashboard.PNG)
 
+
+
 **1. The subject demographic information with a dropdown menu:**
 
 ![demo_info](https://github.com/cami5326/belly-button-challenge/blob/main/StarterCode/pictures/demo_info.PNG)
